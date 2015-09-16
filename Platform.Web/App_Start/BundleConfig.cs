@@ -8,72 +8,41 @@ namespace Platform.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            // App Styles
-            bundles.Add(new StyleBundle("~/Content/appCss").Include(
-                "~/Content/app/css/app.css"
+            // Application Scripts
+            bundles.Add(new ScriptBundle("~/bundles/appScripts")
+                .IncludeDirectory("~/Scripts/app", "*.js", true));
+
+            // Base Scripts (not lazyloaded)
+            bundles.Add(new ScriptBundle("~/bundles/baseScripts").Include(
+              "~/Vendor/modernizr/modernizr.js",
+              "~/Vendor/jquery/dist/jquery.js",
+              "~/Vendor/angular/angular.js",
+              "~/Vendor/angular-route/angular-route.js",
+              "~/Vendor/angular-cookies/angular-cookies.js",
+              "~/Vendor/angular-animate/angular-animate.js",
+              "~/Vendor/angular-touch/angular-touch.js",
+              "~/Vendor/angular-ui-router/release/angular-ui-router.js",
+              "~/Vendor/ngstorage/ngStorage.js",
+              "~/Vendor/angular-ui-utils/ui-utils.js",
+              "~/Vendor/angular-sanitize/angular-sanitize.js",
+              "~/Vendor/angular-resource/angular-resource.js",
+              "~/Vendor/angular-translate/angular-translate.js",
+              "~/Vendor/angular-translate-loader-url/angular-translate-loader-url.js",
+              "~/Vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
+              "~/Vendor/angular-translate-storage-local/angular-translate-storage-local.js",
+              "~/Vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
+              "~/Vendor/oclazyload/dist/ocLazyLoad.js",
+              "~/Vendor/angular-bootstrap/ui-bootstrap-tpls.js",
+              "~/Vendor/angular-loading-bar/build/loading-bar.js",
+              "~/Vendor/angular-dynamic-locale/dist/tmhDynamicLocale.js",
+              "~/Vendor/jquery.browser/dist/jquery.browser.js"
             ));
 
-            // Bootstrap Styles
-            bundles.Add(new StyleBundle("~/Content/bootstrapCss").Include(
-                "~/Content/app/css/bootstrap.css", new CssRewriteUrlTransform()
-            ));
+            bundles.Add(new StyleBundle("~/bundles/appStyles")
+                    .Include("~/Content/app/app.css"));
 
-
-            bundles.Add(new ScriptBundle("~/bundles/Platform.Web").Include(
-                // App init
-                "~/Scripts/app/app.init.js",
-                // Modules
-                "~/Scripts/app/modules/bootstrap-start.js",
-                "~/Scripts/app/modules/clear-storage.js",
-                "~/Scripts/app/modules/constants.js",
-                "~/Scripts/app/modules/localize.js",
-                "~/Scripts/app/modules/navbar-search.js",
-                "~/Scripts/app/modules/sidebar.js",
-                "~/Scripts/app/modules/toggle-state.js",
-                "~/Scripts/app/modules/utils.js"
-            ));
-
-            // Main Vendor
-
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-2.1.3.js"
-            ));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
-
-            // Vendor Plugins
-
-            bundles.Add(new StyleBundle("~/bundles/simpleLineIcons").Include(
-              "~/Vendor/simple-line-icons/css/simple-line-icons.css", new CssRewriteUrlTransform()
-            ));
-
-
-            bundles.Add(new ScriptBundle("~/bundles/storage").Include(
-              "~/Vendor/jQuery-Storage-API/jquery.storageapi.js"
-            ));
-
-            bundles.Add(new StyleBundle("~/bundles/whirl").Include(
-              "~/Vendor/whirl/dist/whirl.css"
-            ));
-
-            bundles.Add(new StyleBundle("~/bundles/fontawesome").Include(
-              "~/Vendor/fontawesome/css/font-awesome.min.css", new CssRewriteUrlTransform()
-            ));
-
-            bundles.Add(new StyleBundle("~/bundles/animatecss").Include(
-              "~/Vendor/animate.css/animate.min.css"
-            ));
-
-            bundles.Add(new ScriptBundle("~/bundles/localize").Include(
-              "~/Vendor/jquery-localize-i18n/dist/jquery.localize.js"
-            ));
-
+            bundles.Add(new StyleBundle("~/bundles/bootstrapStyles")
+                    .Include("~/Content/app/bootstrap.css"));
         }
     }
 }

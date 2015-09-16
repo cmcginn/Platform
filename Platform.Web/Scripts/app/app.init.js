@@ -1,6 +1,6 @@
 /*!
  * 
- * Platform.Web - Bootstrap Admin App + jQuery
+ * Platform.Web - Bootstrap Admin App + AngularJS
  * 
  * Author: @themicon_co
  * Website: http://themicon.co
@@ -8,29 +8,65 @@
  * 
  */
 
+if (typeof $ === 'undefined') { throw new Error('This application\'s JavaScript requires jQuery'); }
 
-(function(window, document, $, undefined){
+// APP START
+// ----------------------------------- 
 
-  if (typeof $ === 'undefined') { throw new Error('This application\'s JavaScript requires jQuery'); }
+var App = angular.module('angle', [
+    'ngRoute',
+    'ngAnimate',
+    'ngStorage',
+    'ngCookies',
+    'pascalprecht.translate',
+    'ui.bootstrap',
+    'ui.router',
+    'oc.lazyLoad',
+    'cfp.loadingBar',
+    'ngSanitize',
+    'ngResource',
+    'ui.utils'
+  ]);
 
-  $(function(){
+App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', function ($rootScope, $state, $stateParams, $window, $templateCache) {
+    // Set reference to access them from any scope
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    $rootScope.$storage = $window.localStorage;
 
-    // Restore body classes
+    // Uncomment this to disable template cache
+    /*$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        if (typeof(toState) !== 'undefined'){
+          $templateCache.remove(toState.templateUrl);
+        }
+    });*/
+
+    // Scope Globals
     // ----------------------------------- 
-    var $body = $('body');
-    new StateToggler().restoreState( $body );
-    
-    // enable settings toggle after restore
-    $('#chk-fixed').prop('checked', $body.hasClass('layout-fixed') );
-    $('#chk-collapsed').prop('checked', $body.hasClass('aside-collapsed') );
-    $('#chk-boxed').prop('checked', $body.hasClass('layout-boxed') );
-    $('#chk-float').prop('checked', $body.hasClass('aside-float') );
-    $('#chk-hover').prop('checked', $body.hasClass('aside-hover') );
+    $rootScope.app = {
+      name: 'Platform.Web',
+      description: 'Angular Bootstrap Admin Template',
+      year: ((new Date()).getFullYear()),
+      layout: {
+        isFixed: true,
+        isCollapsed: false,
+        isBoxed: false,
+        isRTL: false,
+        horizontal: false,
+        isFloat: false,
+        asideHover: false,
+        theme: null
+      },
+      useFullLayout: false,
+      hiddenFooter: false,
+      offsidebarOpen: false,
+      asideToggled: false,
+      viewAnimation: 'ng-fadeInUp'
+    };
+    $rootScope.user = {
+      name:     'John',
+      job:      'ng-developer',
+      picture:  'app/img/user/02.jpg'
+    };
 
-    // When ready display the offsidebar
-    $('.offsidebar.hide').removeClass('hide');  
-
-  }); // doc ready
-
-
-})(window, document, window.jQuery);
+          }]);

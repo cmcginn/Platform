@@ -1,60 +1,22 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="angle">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Bootstrap Admin App + jQuery">
-    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-    <title>Platform.Web - Bootstrap Admin Template</title>
-    <!-- =============== VENDOR STYLES ===============-->
-    @Styles.Render("~/bundles/fontawesome")
-    @Styles.Render("~/bundles/simpleLineIcons")
-    @Styles.Render("~/bundles/animatecss")
-    @Styles.Render("~/bundles/whirl")
-    <!-- =============== PAGE VENDOR STYLES =============== -->
-    @if (IsSectionDefined("Styles"))
-        {@RenderSection("Styles", required: false)}
-    <!-- =============== APP STYLES ===============-->
-    <link href="@Styles.Url("~/Content/app/css/bootstrap.css")" rel="stylesheet" type="text/css" id="bscss" />
-    <!-- =============== APP STYLES ===============-->
-    <link href="@Styles.Url("~/Content/app/css/app.css")" rel="stylesheet" type="text/css" id="maincss" />
-
+    <meta name="description" content="{{app.description}}">
+    <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+    <title data-ng-bind="pageTitle()">Platform.Web - Angular Bootstrap Admin Template</title>
+    @Styles.Render("~/bundles/bootstrapStyles")
+    @Styles.Render("~/bundles/appStyles")
 </head>
-<body>
-    <div class="wrapper">
-        <!-- top navbar-->
-        <header class="topnavbar-wrapper">
-            @Html.Partial("_TopNavbar")
-        </header>
-        <!-- sidebar-->
-        <aside class="aside">
-            @Html.Partial("_Sidebar")
-        </aside>
-        <!-- offsidebar-->
-        <aside class="offsidebar hide">
-            @Html.Partial("_Offsidebar")
-        </aside>
-        <!-- Main section-->
-        <section>
-            <!-- Page content-->
-            <div class="content-wrapper">
-                @RenderBody()
-            </div>
-        </section>
-        <!-- Page footer-->
-        <footer>
-            @Html.Partial("_Footer")
-        </footer>
-    </div>
-    <!-- =============== VENDOR SCRIPTS ===============-->
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/storage")
-    @Scripts.Render("~/bundles/localize")
-    <!-- =============== PAGE VENDOR SCRIPTS ===============-->
-    @RenderSection("scripts", required: false)
-    <!-- =============== APP SCRIPTS ===============-->
-    @Scripts.Render("~/bundles/Platform.Web")
+
+<body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled}">
+
+    <div ui-view="" data-autoscroll="false" class="wrapper">@RenderBody()</div>
+
+    @Scripts.Render("~/bundles/baseScripts")
+    @Scripts.Render("~/bundles/appScripts")
+
 </body>
 </html>

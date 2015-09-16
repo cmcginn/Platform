@@ -5,6 +5,15 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Core", "Platform.Core\Platform.Core.csproj", "{6CB795FC-8CC2-45F7-BB07-E66CC2E10076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform.Web", "Platform.Web\Platform.Web.csproj", "{B97F03C5-8E84-46BA-AC9A-F07362843C6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FD9F6CC4-144E-4CFB-BE36-8A9E5A154E21}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,10 @@ Global
 		{6CB795FC-8CC2-45F7-BB07-E66CC2E10076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB795FC-8CC2-45F7-BB07-E66CC2E10076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB795FC-8CC2-45F7-BB07-E66CC2E10076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97F03C5-8E84-46BA-AC9A-F07362843C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97F03C5-8E84-46BA-AC9A-F07362843C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97F03C5-8E84-46BA-AC9A-F07362843C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97F03C5-8E84-46BA-AC9A-F07362843C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

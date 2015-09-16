@@ -13,5 +13,10 @@ namespace Platform.Web.Controllers
         {
             return View();
         }
+        // GET: SingleView
+        public ActionResult MenuView()
+        {
+            return View();
+        }
     }
 }
