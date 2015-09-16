@@ -192,6 +192,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartialsController.cs" />
     <Compile Include="Controllers\SingleViewController.cs" />
     <Compile Include="Global.asax.cs">
@@ -221,6 +222,9 @@
     <Content Include="i18n\en.json" />
     <Content Include="i18n\es_AR.json" />
     <Content Include="Scripts\app\app.init.js" />
+    <Content Include="Scripts\app\custom\config.js" />
+    <Content Include="Scripts\app\custom\constants.js" />
+    <Content Include="Scripts\app\custom\services\route-helpers.js" />
     <Content Include="Scripts\app\modules\config.js" />
     <Content Include="Scripts\app\modules\constants.js" />
     <Content Include="Scripts\app\modules\controllers\main.js" />
@@ -232,6 +236,7 @@
     <Content Include="Scripts\app\modules\services\nav-search.js" />
     <Content Include="Scripts\app\modules\services\route-helpers.js" />
     <Content Include="Scripts\app\modules\services\utils.js" />
+    <Content Include="Scripts\app\platform.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Vendor\angular-animate\angular-animate.js" />
@@ -715,6 +720,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Vendor\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Vendor\angular-ui-router\api\angular-ui-router.d.ts" />
