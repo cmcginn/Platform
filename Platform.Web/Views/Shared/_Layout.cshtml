@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Bundles.Reference("~/BaseScripts");
+    Bundles.Reference("~/Scripts");
+    Bundles.Reference("~/BootstrapStyles");
+    Bundles.Reference("~/AppStyles");
+    
+}
+
+<!DOCTYPE html>
 <html lang="en" data-ng-app="platform">
 
 <head>
@@ -7,8 +15,7 @@
     <meta name="description" content="{{app.description}}">
     <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
     <title data-ng-bind="pageTitle()">Platform.Web - Angular Bootstrap Admin Template</title>
-    @Styles.Render("~/bundles/bootstrapStyles")
-    @Styles.Render("~/bundles/appStyles")
+    @Bundles.RenderStylesheets()
     <script type="text/javascript">
         var appRoot = '@Url.Content("~/")';
     </script>
@@ -18,8 +25,7 @@
 
     <div ui-view="" data-autoscroll="false" class="wrapper">@RenderBody()</div>
 
-    @Scripts.Render("~/bundles/baseScripts")
-    @Scripts.Render("~/bundles/appScripts")
-
+ 
+    @Bundles.RenderScripts()
 </body>
 </html>

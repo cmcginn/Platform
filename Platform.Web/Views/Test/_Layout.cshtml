@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+    Bundles.Reference("~/BaseScripts");
+    Bundles.Reference("~/Scripts");
+    Bundles.Reference("~/BootstrapStyles");
+    Bundles.Reference("~/AppStyles");
+    Bundles.Reference("~/Test");
+}
+
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="platform">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script>
+        var appRoot = '@Url.Content("~")';
+    </script>
+    @Bundles.RenderStylesheets()
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @Bundles.RenderScripts()
+    @RenderSection("scripts", false)
+</body>
+</html>

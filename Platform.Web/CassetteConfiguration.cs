@@ -13,13 +13,13 @@ namespace Platform.Web
         {
             var files = new[] 
             {
+              
               "~/Vendor/modernizr/modernizr.js",
               "~/Vendor/jquery/dist/jquery.js",
               "~/Vendor/angular/angular.js",
               "~/Vendor/angular-route/angular-route.js",
               "~/Vendor/angular-cookies/angular-cookies.js",
               "~/Vendor/angular-animate/angular-animate.js",
-              "~/Vendor/angular-touch/angular-touch.js",
               "~/Vendor/angular-ui-router/release/angular-ui-router.js",
               "~/Vendor/ngstorage/ngStorage.js",
               "~/Vendor/angular-ui-utils/ui-utils.js",
@@ -33,22 +33,35 @@ namespace Platform.Web
               "~/Vendor/oclazyload/dist/ocLazyLoad.js",
               "~/Vendor/angular-bootstrap/ui-bootstrap-tpls.js",
               "~/Vendor/angular-loading-bar/build/loading-bar.js",
-              "~/Vendor/angular-dynamic-locale/dist/tmhDynamicLocale.js",
-              "~/Vendor/jquery.browser/dist/jquery.browser.js"
+              "~/Vendor/jquery.browser/dist/jquery.browser.js",
+              "~/Vendor/lodash/lodash.js",
+              "~/Vendor/sprintf/dist/angular-sprintf.min.js"
 
             };
-            bundles.Add<ScriptBundle>("~/bundles/appScripts", new FileSearch { Pattern = "*.js", SearchOption = System.IO.SearchOption.AllDirectories });
-            bundles.Add<ScriptBundle>("~/bundles/baseScripts", files);
+            bundles.Add<ScriptBundle>("~/Scripts", new FileSearch {  Pattern = "*.js", SearchOption = System.IO.SearchOption.AllDirectories });
+            bundles.Add<ScriptBundle>("~/BaseScripts", files);
             files = new[]
             {
                 "~/Content/app/app.css"
             };
-            bundles.Add<StylesheetBundle>("~/bundles/appStyles", files);
+            bundles.Add<StylesheetBundle>("~/AppStyles", files);
             files = new[]
             {
-                "~/Content/app/app.css"
+                "~/Content/app/bootstrap.css"
             };
-            bundles.Add<StylesheetBundle>("~/bundles/bootstrapStyles", files);
+            bundles.Add<StylesheetBundle>("~/BootstrapStyles", files);
+
+            //test
+            files = new[]
+            {
+                "~/Vendor/jasmine/lib/jasmine-2.3.4/jasmine.js",
+                "~/Vendor/jasmine/lib/jasmine-2.3.4/jasmine-html.js",
+                "~/Vendor/jasmine/lib/jasmine-2.3.4/boot.js",
+                "~/Vendor/requirejs/require.js",
+                "~/Vendor/angular-mocks/angular-mocks.js"
+            };
+            bundles.Add<ScriptBundle>("~/Test", files);
+            bundles.Add<StylesheetBundle>("~/Test", new[] { "~/Vendor/jasmine/lib/jasmine-2.3.4/jasmine.css" });
         }
     }
 }

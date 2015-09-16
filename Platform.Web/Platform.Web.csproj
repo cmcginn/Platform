@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartialsController.cs" />
     <Compile Include="Controllers\SingleViewController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +225,8 @@
     <Content Include="Scripts\app\app.init.js" />
     <Content Include="Scripts\app\custom\config.js" />
     <Content Include="Scripts\app\custom\constants.js" />
+    <Content Include="Scripts\app\custom\controllers\schemaBuilderController.js" />
+    <Content Include="Scripts\app\custom\services\data-service.js" />
     <Content Include="Scripts\app\custom\services\route-helpers.js" />
     <Content Include="Scripts\app\modules\config.js" />
     <Content Include="Scripts\app\modules\constants.js" />
@@ -239,6 +242,10 @@
     <Content Include="Scripts\app\platform.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Tests\controllers\schemaBuilderControllerSpec.js" />
+    <Content Include="Tests\controllers\specHelper.js" />
+    <Content Include="Tests\mock-data-service.js" />
+    <Content Include="Tests\mockData.js" />
     <Content Include="Vendor\angular-animate\angular-animate.js" />
     <Content Include="Vendor\angular-animate\angular-animate.min.js" />
     <Content Include="Vendor\angular-bootstrap\ui-bootstrap-tpls.js" />
@@ -254,6 +261,7 @@
     <Content Include="Vendor\angular-loading-bar\Gruntfile.js" />
     <Content Include="Vendor\angular-loading-bar\src\loading-bar.css" />
     <Content Include="Vendor\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="Vendor\angular-mocks\angular-mocks.js" />
     <Content Include="Vendor\angular-resource\angular-resource.js" />
     <Content Include="Vendor\angular-resource\angular-resource.min.js" />
     <Content Include="Vendor\angular-route\angular-route.js" />
@@ -293,6 +301,17 @@
     <Content Include="Vendor\fontawesome\css\font-awesome.css" />
     <Content Include="Vendor\fontawesome\css\font-awesome.min.css" />
     <Content Include="Vendor\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\boot.js" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\console.js" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\jasmine-html.js" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\jasmine.css" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\jasmine.js" />
+    <Content Include="Vendor\jasmine\lib\jasmine-2.3.4\jasmine_favicon.png" />
+    <Content Include="Vendor\jasmine\SpecRunner.html" />
+    <Content Include="Vendor\jasmine\spec\PlayerSpec.js" />
+    <Content Include="Vendor\jasmine\spec\SpecHelper.js" />
+    <Content Include="Vendor\jasmine\src\Player.js" />
+    <Content Include="Vendor\jasmine\src\Song.js" />
     <Content Include="Vendor\jquery.browser\dist\jquery.browser.js" />
     <Content Include="Vendor\jquery\dist\jquery.js" />
     <Content Include="Vendor\jquery\dist\jquery.min.js" />
@@ -380,6 +399,8 @@
     <Content Include="Vendor\jquery\src\var\support.js" />
     <Content Include="Vendor\jquery\src\var\toString.js" />
     <Content Include="Vendor\jquery\src\wrap.js" />
+    <Content Include="Vendor\lodash\lodash.js" />
+    <Content Include="Vendor\lodash\lodash.min.js" />
     <Content Include="Vendor\modernizr\feature-detects\a-download.js" />
     <Content Include="Vendor\modernizr\feature-detects\audio-audiodata-api.js" />
     <Content Include="Vendor\modernizr\feature-detects\audio-webaudio-api.js" />
@@ -553,8 +574,16 @@
     <Content Include="Vendor\oclazyload\examples\requireJSExample\partials\grid.html" />
     <Content Include="Vendor\oclazyload\examples\simpleExample\index.html" />
     <Content Include="Vendor\oclazyload\examples\simpleExample\js\testApp.js" />
+    <Content Include="Vendor\requirejs\require.js" />
     <Content Include="Vendor\simple-line-icons\css\simple-line-icons.css" />
     <Content Include="Vendor\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Vendor\sprintf\demo\angular.html" />
+    <Content Include="Vendor\sprintf\dist\angular-sprintf.min.js" />
+    <Content Include="Vendor\sprintf\dist\sprintf.min.js" />
+    <Content Include="Vendor\sprintf\gruntfile.js" />
+    <Content Include="Vendor\sprintf\src\angular-sprintf.js" />
+    <Content Include="Vendor\sprintf\src\sprintf.js" />
+    <Content Include="Vendor\sprintf\test\test.js" />
     <Content Include="Views\SingleView\MenuView.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -722,6 +751,22 @@
     <None Include="Project_Readme.html" />
     <Content Include="Vendor\fontawesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Vendor\jasmine\MIT.LICENSE" />
+    <Content Include="Views\Test\_Layout.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Vendor\lodash\.bower.json" />
+    <Content Include="Vendor\lodash\bower.json" />
+    <Content Include="Vendor\lodash\LICENSE" />
+    <Content Include="Vendor\sprintf\.bower.json" />
+    <Content Include="Vendor\sprintf\.gitignore" />
+    <Content Include="Vendor\sprintf\bower.json" />
+    <Content Include="Vendor\sprintf\dist\angular-sprintf.min.js.map" />
+    <Content Include="Vendor\sprintf\dist\angular-sprintf.min.map" />
+    <Content Include="Vendor\sprintf\dist\sprintf.min.js.map" />
+    <Content Include="Vendor\sprintf\dist\sprintf.min.map" />
+    <Content Include="Vendor\sprintf\LICENSE" />
+    <Content Include="Vendor\sprintf\package.json" />
+    <Content Include="Vendor\sprintf\README.md" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Vendor\angular-ui-router\api\angular-ui-router.d.ts" />
