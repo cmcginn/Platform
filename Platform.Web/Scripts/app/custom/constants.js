@@ -14,7 +14,8 @@
           //'isteven-multi-select': ['Vendor/angular-multi-select-master/isteven-multi-select.css'],
           'whirl': [appRoot + 'vendor/whirl/dist/whirl.css'],
           'icons': [appRoot + 'Vendor/fontawesome/css/font-awesome.min.css',
-                       appRoot + 'Vendor/simple-line-icons/css/simple-line-icons.css']
+                       appRoot + 'Vendor/simple-line-icons/css/simple-line-icons.css'],
+          'modernizr': ['/Vendor/modernizr/modernizr.js']
           //'amcharts': ['vendor/amcharts_3.14.5/amcharts/amcharts.js',
           //'vendor/amcharts_3.14.5/amcharts/serial.js', 'vendor/amcharts_3.14.5/amcharts/xy.js', 'vendor/amcharts_3.14.5/amcharts/themes/light.js']
       },

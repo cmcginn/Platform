@@ -4,11 +4,21 @@
     "heading": "true",
     "translate": "sidebar.heading.HEADER"
   },
-  {
-    "text": "Single View",
-    "sref": "app.singleview",
-    "icon": "fa fa-file-o",
-    "translate": "sidebar.nav.SINGLEVIEW"
+    {
+        "text": "Single View",
+        "sref": "app.singleview",
+        "icon": "fa fa-file-o",
+        "translate": "sidebar.nav.SINGLEVIEW"
+    },
+    {
+        "text": "Register",
+        "sref": "page.register",
+        "icon": "fa fa-file-o"
+    },
+     {
+    "text": "Login",
+    "sref": "page.login",
+    "icon": "fa fa-file-o"
   },
   {
     "text": "Menu",

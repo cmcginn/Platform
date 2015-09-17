@@ -6,15 +6,19 @@ using System.Web.Mvc;
 
 namespace Platform.Web.Controllers
 {
-    public class AppController : Controller
+    public class AccountController : Controller
     {
-        // GET: Home
+        // GET: Account
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Page()
+        public ActionResult Register()
+        {
+            return View();
+        }
+        public ActionResult Login()
         {
             return View();
         }

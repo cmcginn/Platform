@@ -18,7 +18,25 @@
                 url: '/UIKit',
                 title: 'UIKit',
                 templateUrl: helper.basepath('Test/UIKit')
-        });
+
+            }).state('page', {
+                url: '/page',
+                templateUrl: helper.basepath('App/Page'),
+                resolve: helper.resolveFor('modernizr', 'icons'),
+                controller: [
+                    "$rootScope", function($rootScope) {
+                        $rootScope.app.layout.isBoxed = false;
+                    }
+                ]
+            }).state('page.register', {
+                url: '/Register',
+                title: "Register",
+                templateUrl: helper.basepath('Account/Register')
+            }).state('page.login', {
+                url: '/Login',
+                title: "Login",
+                templateUrl: helper.basepath('Account/Login')
+            });
 
     }
 ]);
