@@ -14,7 +14,11 @@
                 title: 'Home',
                 templateUrl: helper.basepath('Home/Index')
                 //resolve: helper.resolveFor('isteven-multi-select', 'whirl', 'ngDialog')
-            });
+            }).state('platform.uikit', {
+                url: '/UIKit',
+                title: 'UIKit',
+                templateUrl: helper.basepath('Test/UIKit')
+        });
 
     }
 ]);

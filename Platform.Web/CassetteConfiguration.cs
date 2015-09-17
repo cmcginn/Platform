@@ -35,7 +35,10 @@ namespace Platform.Web
               "~/Vendor/angular-loading-bar/build/loading-bar.js",
               "~/Vendor/jquery.browser/dist/jquery.browser.js",
               "~/Vendor/lodash/lodash.js",
-              "~/Vendor/sprintf/dist/angular-sprintf.min.js"
+              "~/Vendor/sprintf/dist/angular-sprintf.min.js",
+              "~/Vendor/ngDialog/js/ngDialog.min.js",
+              "~/Vendor/angular-multi-select-master/isteven-multi-select.js"
+              
 
             };
             bundles.Add<ScriptBundle>("~/Scripts", new FileSearch {  Pattern = "*.js", SearchOption = System.IO.SearchOption.AllDirectories });
@@ -47,10 +50,16 @@ namespace Platform.Web
             bundles.Add<StylesheetBundle>("~/AppStyles", files);
             files = new[]
             {
-                "~/Content/app/bootstrap.css"
+                "~/Content/app/bootstrap.css",
+           
             };
             bundles.Add<StylesheetBundle>("~/BootstrapStyles", files);
-
+            files = new[]
+            {
+                "~/Vendor/ngDialog/css/ngDialog.min.css",
+                "~/Vendor/angular-multi-select-master/isteven-multi-select.css",
+                "~/Vendor/whirl/dist/whirl.css"
+            };
             //test
             files = new[]
             {

@@ -13,5 +13,10 @@ namespace Platform.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult UIKit()
+        {
+            return View();
+        }
     }
 }
